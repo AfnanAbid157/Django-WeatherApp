@@ -12,7 +12,6 @@ The app is designed with a modern UI and glassmorphism effect for better user ex
  *Responsive design for mobile and desktop screens.
  *Built with Django and uses OpenWeatherMap API for weather data.
  *Error handling for invalid city names.
-
 🛠 Technologies Used
  *Backend: Python 3.13, Django 4.x
  *Frontend: HTML, CSS, JavaScript (optional for enhancements)
