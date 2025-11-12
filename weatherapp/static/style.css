@@ -1,0 +1,187 @@
+/* 🌤️ Weather App Styles with Working Background Image */
+
+:root {
+    --white: #ffffff;
+    --off-white: #e5e5e5;
+    --transp-white-1: rgba(255, 255, 255, 0.25);
+    --transp-white-2: rgba(255, 255, 255, 0.18);
+    --blue-1: #62b8f5;
+    --blue-2: #4475ef;
+    --shadow: rgba(3, 46, 87, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* 🌄 Body with background image */
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    position: relative;
+
+    /* Use your working static image */
+    background-image: url('/static/weatherpic.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Optional overlay to make text readable */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.25); /* dark overlay */
+    z-index: 0;
+}
+
+/* 🧱 Container */
+.container {
+    position: relative;
+    z-index: 1; /* make sure it’s above overlay */
+    width: 50%;
+    background: var(--transp-white-2);
+    backdrop-filter: blur(10px);
+    margin: 5rem auto;
+    padding: 2rem;
+    border: 2px solid var(--transp-white-1);
+    border-radius: 15px;
+    color: rgb(5, 41, 51);
+    min-height: 550px;
+    box-shadow: 0 8px 24px var(--shadow);
+}
+
+/* 🧾 Typography */
+h1 {
+    text-align: center;
+    color: rgb(5, 41, 51);
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 2rem;
+    color: black;
+}
+
+/* 🔍 Form */
+form {
+    display: grid;
+    grid-template-columns: 72% 25%;
+    gap: 3%;
+    margin-bottom: 2rem;
+}
+
+input {
+    background-color: transparent;
+    padding: 0.6rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    outline: none;
+    color: rgb(5, 41, 51);
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #333;
+    opacity: 0.8;
+}
+
+.btn {
+    padding: 0.6rem 1rem;
+    border: 2px solid black;
+    color: black;
+    background-color: transparent;
+    border-radius: 0.3em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    background-color: rgb(5, 41, 51);
+    color: #fff;
+}
+
+/* 🌡️ Weather Display */
+.weather {
+    margin-top: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.left,
+.right {
+    flex: 1;
+    background: var(--transp-white-2);
+    backdrop-filter: blur(-50px);
+    border-radius: 10px;
+    padding: 1rem;
+    text-align: center;
+    color: rgb(5, 41, 51);
+}
+
+.left {
+    text-transform: uppercase;
+}
+
+.temp {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.city {
+    margin-top: 10px;
+    font-weight: 500;
+    font-size: 2.3rem;
+}
+
+.icon {
+    height: 85px;
+    padding: 0.5rem;
+}
+
+.condition {
+    font-size: 1.2rem;
+    color: rgb(5, 41, 51);
+    margin-top: 10px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 1000px) {
+    .container {
+        width: 80%;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 90%;
+        height: auto;
+    }
+
+    form {
+        grid-template-columns: 100%;
+    }
+
+    .weather {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .right {
+        margin-top: 1rem;
+    }
+}
