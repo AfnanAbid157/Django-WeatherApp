@@ -20,4 +20,4 @@ The app is designed with a modern UI and glassmorphism effect for better user ex
  *Libraries: requests (Python HTTP library)
  *Others: Google Custom Search API (optional, for city images)
 
-![image url]()
+![image url](weatherApp.png.png)
